@@ -1,0 +1,47 @@
+<% include ./../helpers/show-menu-user %>
+<% 
+const linkLogin = systemConfig.prefixBlog + `/auth/login`;
+%>
+
+<div id="navarea">
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav custom_nav" style="border: none;">
+            <li class=""><a href="/" data-active="">Trang chủ</a></li>
+            <li class="dropdown"> <a href="#" class="" data-active="category" data-toggle="dropdown" role="button" aria-expanded="false">Chuyên mục</a>
+              <ul class="dropdown-menu" role="menu">
+                  <% itemsCategory.forEach((category) => { %>  
+                      <li>
+                          <a href="/category/<%= category.slug %>"><%= category.name %></a>
+                      </li>
+                  <%})%>
+              
+              </ul>
+            </li>
+            <!-- <li><a href="/about" data-active="about">Giới thiệu</a></li> -->
+            <li><a href="/contact" data-active="contact">Liên hệ</a></li>
+            <li><a href="/rss" data-active="rss">Tin tức tổng hợp</a></li>
+            <%- showMenuUser(userInfo) %>
+            <div class="header_top_right">
+              <form class="search_form" action="/search" method="GET">
+                <input class="form-control mb-3" type="text" placeholder="Tìm kiếm" name="keyword" value='<%= params.keyword %>'>
+                <input style=" float: right; width: 37px;"  class="media-btn button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn" type="submit" value="">
+            </form>
+            </div>
+          </ul> 
+          
+        </div>
+        
+      </div>
+      
+    </nav>
+
+    
+    
+  </div>
+
+

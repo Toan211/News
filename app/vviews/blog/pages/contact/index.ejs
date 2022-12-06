@@ -1,0 +1,30 @@
+<%
+    const linkSubmit = systemConfig.prefixBlog + '/contact/save';
+%>
+
+<section id="ContactContent">
+	<div class="row">
+	  <div class="col-lg-12 col-md-12 col-sm-12">
+		<div class="contact_area">
+		  <h1>Liên hệ</h1>
+		  <p>Điện tử có khả năng tiếp cận và phản hồi liên tục trong mọi thời điểm trên toàn cầu, cập nhật liên tục các thông tin nóng hổi xảy ra trên khắp thế giới. Khác biệt hoàn toàn với báo giấy, có rất nhiều hạn chế luôn bị giới hạn nhất định về số trang, số chữ, thời điểm phát hành và số lượng tin tức, báo điện tử có tốc độ cập nhật tuyệt vời và không gian tin tức không giới hạn. Đặc biệt trong thời đại công nghệ thông tin sức mạnh của báo điện tử đang uy hiếp mạnh mẽ đến sự tồn tại của hình thức báo giấy truyền thống từng tồn tại hàng trăm năm nay.</p>
+		  <div class="contact_bottom">
+			<div class="contact_us wow fadeInRightBig">
+				<% include ./../../elements/notify %>
+			  <h2>Liên hệ với chúng tôi</h2>
+			  <form class="contact_form" id="blog_contact_form" name="contact-form" action="<%= linkSubmit %>" method="POST">
+				<input class="form-control" name="name" type="text" placeholder="Name(required)">
+				<input class="form-control" name="email" type="email" placeholder="E-mail(required)">
+				<input class="form-control" name="phone" type="text" placeholder="Phone(required)">
+				 <input class="form-control" name="subject" type="text" placeholder="Subject">
+				<textarea class="form-control" name="message" cols="30" rows="10" placeholder="Message(required)"></textarea>
+				<input  type="submit"></input>
+			  </form>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+  </section>
+
+  

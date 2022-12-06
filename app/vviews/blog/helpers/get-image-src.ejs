@@ -1,0 +1,14 @@
+<% 
+    getImageSrc = (string) => { 
+        var myRegex = /<img[^>]+src="(https:\/\/[^">]+)"/g;
+        let link = myRegex.exec(string);
+        //console.log(link);
+        return link[1];
+    } 
+%>
+
+
+
+
+
+

@@ -1,0 +1,15 @@
+<% 
+    inputHelper = (name, value, type='text', id = '') => {
+        return 	`<input type="${type}" name="${name}" value="${value}" class="form-control form-control-sm" id='${id}''>`;
+    }
+
+
+%>
+		
+<% 
+    inputMultiImageHelper = (name, value, id = '') => {
+        return 	`<input type="file" multiple name="${name}" value="${value}" class="form-control form-control-sm" id='${id}'>`;
+    }
+%>
+
+

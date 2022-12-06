@@ -1,0 +1,44 @@
+<% include ./../helpers/format-date %>
+<% include ./../helpers/format-summary %>
+<%
+    const folder_uploads = 'uploads/articles/';
+%>
+
+
+<div class="col-lg-4 col-md-4">
+    <div class="content_bottom_right">
+        <!-- recent  -->
+      <div class="single_bottom_rightbar">
+        <h2>Tin nổi bật</h2>
+        <ul class="small_catg popular_catg wow fadeInDown">
+          <% for(let i = 0; i < itemsSpecial.length; i++){ %>
+          <li>
+            <div class="media wow fadeInDown"> <a  href="/article/<%= itemsSpecial[i].slug %>" class="media-left"><img src="<%= folder_uploads + itemsSpecial[i].avatar %>" alt="<%= itemsSpecial[i].name %>"> </a>
+              <div class="media-body">
+                <h4 class="media-heading media-tablet"><a  href="/article/<%= itemsSpecial[i].slug %>" ><%= itemsSpecial[i].name %> </a></h4>
+                <p></p>
+              </div>
+            </div>
+          </li>
+          <% } %>
+        </ul>
+      </div>
+      
+      <% if(random_bar == true){ %>
+        <% include ./random-bar %>
+      <% } %>
+      
+    <!-- banner -->
+      
+      <div class="single_bottom_rightbar wow fadeInDown header_bottom_right">
+        <h2></h2>
+        <a href="#">
+          <img style="
+          float: right;
+          width: 60%;
+          margin-right: 18%;
+          margin-top: 20px;" src="magexpress/images/re7.png" alt="">
+        </a>
+      </div>
+    </div>
+  </div>

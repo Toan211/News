@@ -1,0 +1,207 @@
+
+error 16: articles--special change status
+
+
+Vào 1 cate sẽ hiển thị các bài viết trong 
+cate đó ra
+- Lấy danh sách cate trong CSDL
+	+ Field: name, id, slug
+	+ status = active
+	+ sắp xếp order tăng đần	A C
+	+ CategoryModel
+	+ Trừ index.js ra các tập tin khác đều gọi để lấy category
+- Đổ danh sách đó ra menu
+	+ header.ejs
+
+Khai báo router /category trong index
+
+Category A
+- ArticlesModel 
+    + cateroy/12038201381203128
+	+ Lấy danh sách Article thuộc về categoryID
+    + select: 
+        id name thumb content,  
+        created.user_name created.user_id content
+        category.id, category.name 
+	+ status: active
+    + order: created.time giảm dần 
+    + where category.id = categoryID
+- category.ejs 
+    + khai báo route /:id
+    + lấy categoryID
+    + lấy itemsArticle đổ ra view
+- categories/index.ejs đổ dữ liệu	
+
+
+Detail
+-Article model
++ lấy danh sách article thuộc về categoryID
++ select: id, name, content, thumb, slug
+	  create.username, create.userid, create.time
+	  category.id, category.name
+
++ pagination, relavent: where category.id = categoryID
+
+-article.ejs
+	+ khai báo router article/:id
+	+ lấy articleID
+	+ đổ itemArticle ra view
+-article/index.ejs đổ dữ liệu
+
+
+layout:
+
+
+- CategoryModel 
+    - category/categoryID
+	+ Lấy danh sách Article thuộc về categoryID
+	+ layoutNumber
+    - select: 
+        id name thumb content,  
+        created.user_name created.user_id content
+        category.id, category.name 
+	+ status: active
+    - order: created.time giảm dần 
+    - where category.id = categoryID
+- category.ejs 
+    + khai báo route /:id
+    + lấy categoryID
+    + điều kiện từ categoryID: layoutNumber
+    + lấy itemsArticle đổ ra view
+- categories/indexLayout1.ejs 	đổ dữ liệu 
+- categories/indexLayout2.ejs 	đổ dữ liệu 
+----------------
+
+fix frontend
+search *
+--đổ các article của từng category cụ thể trong trang home
+--add thêm vài cái article
+about me
+contact nếu đủ tg
+sửa rss
+--cắt frontend của sales
+
+
+vietj hóa -done 30/3
+gắn search trong tiêu đề -done 27/3
+bài viết liên quan xóa descrips -done 30/3
+tìm tấm hình quảng cáo bỏ vô phần bên phải dưới -done 30/3
+bclick vào tin tức tổng hợp--> mở tab mới -done 30/3
+trang login -done 29/3
+làm trang liên hệ -done 28/3
+ajax -done 29/3
+fix logo ?
+menu active -done 30/3
+thống kê dasboard' -done 30/3
+chi tiết url 1-3/4
+in đậm search --done 30/3
+fix lại layout blog category--sửa hình bị móp trong cate 5/4
+header -- 5/4
+error page -- 5/4
+
+sửa about us
+phân trang trong tin tức tổng hợp
+total item nếu dc
+fix lại tin tưc tổng hợp
+pav shop
+không có bài viết nào
+slider -- hiển thị status-link--hình quảng cáo sp != hình sản phầm
+lọc theo status
+subcribe-- name email status time -- quản lý subcribe
+tạo gmail nghiêm túc lol
+sửa lại sidebar 5/4
+thêm ggmap
+fix avatar
+
+
+A 
+    size{
+        A: 1  
+            {
+                color{
+                    red : 1
+                        {
+                            price:
+                        }
+                    blue: 0
+                    yellow: 0
+
+                }
+
+            }
+        B: 0
+        C: 0
+        D: 1
+        original price
+    } 
+
+gửi mail nodemailer
+
+giỏ hàng lưu session or json or localstore
+
+id_product
+tên 
+số lg
+giá tiền
+
+số lg
+id user
+
+
+mã giảm giá
+id
+name
+số tiền
+số lượng
+số lg đã sử dụng
+tg sử dụng, k thúc, 
+dk sử dụng
+trạng thái
+
+
+phí vận chuyển
+
+id
+tên thành phố
+giá tiền
+trạng thái
+
+lưu thành value, r qua front trừ thẳng gía
+
+
+kiểm tra đơn hàng-done
+id đơn hàng-done
+lấy id gửi mail cho ng ta-done
+trạng thái đơn hàng select option-done
+thông tin ng mua email tên địa chỉ ngày mua-done
+chuỗi json lưu các sản phẩm -done
+phí vẫn chuyển-done
+mã giảm giá-done
+tổng giá tiền-done
+
+
+kiểm tra xem ng dùng đó có mã đó ko, sau đó ném qua k tra đơn hàng của frontend
+
+
+
+sidebar 
+filter -- almost done
+validate  
+backend css
+banner?
+gg map
+
+
+filter
+-selector problem: how to get the value(or the text)
+get the href link current addrress
+if the selector 1 not empty " ", then + into ad field
+
+min max filter: lowest value- highest value
+
+
+gg map
+contact
+pagination
+login/admin
+notify

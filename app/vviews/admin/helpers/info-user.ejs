@@ -1,0 +1,8 @@
+<% 
+    userHelper = (name, time) => {
+        return `<span class="fas fa-user" aria-hidden="true"></span> ${name} <br />
+                <span class="fas fa-calendar" aria-hidden="true"></span> ${moment(time).format(systemConfig.format_date)}`;
+    }
+%>
+
+

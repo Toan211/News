@@ -1,0 +1,156 @@
+body {
+    font-family: 'Merriweather', serif;
+    
+}
+
+
+h2 {
+    font-family: 'Merriweather', serif;
+    
+}
+
+.media-heading a {
+    font-family: 'Merriweather';
+    font-size: 17px;
+}
+
+.catg_titile a {
+    color: dimgrey;
+    font-size: 24px;
+}
+
+
+p {
+    float: left;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+}
+
+h4, .h4 {
+    font-size: 20px;
+}
+
+.search_form {
+    padding: 11px 0 0;
+}
+
+.search_form input[type="text"] {
+    width: 210px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #fff;
+    font-family: 'Merriweather', serif;
+    font-size: 16px;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    margin-top: 0px;
+    margin-bottom: -4px;
+    padding-bottom: 17px;
+}
+
+.nav>li>a {
+    
+     padding: 10px 11spx; 
+}
+
+.navbar-nav>li>a {
+    line-height: 25px;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    top: -2px;
+}
+
+a.active {
+    background-color: rgba(255, 255, 255, 0.707);
+    color: #fff;
+    top:-2px;
+}
+
+.dropdown-menu > li > a {
+    font-family: 'Merriweather', serif;
+    padding: 7px 15px;
+}
+
+.media-left {
+    width: 60%;
+    height: 130px;
+}
+
+span.highlight {
+    background-color: chocolate;
+}
+
+.read_more > span {
+    background-color: gray;
+    
+}
+ 
+.read_more {
+    border-bottom: 4px solid gray;
+    
+}
+
+.single_footer_top > h2 {
+    color: aliceblue;
+}
+
+.error_page_content h2 {
+    color: black;
+    margin-top: 30px; 
+}
+
+/* .top_img{    
+    margin: auto;
+    width: fit-content;
+} */
+
+/* -----------CATEGORY----------- */
+.self-category{
+    float: none; 
+    
+}
+
+.self-category ul{
+    padding-top: 5px;
+}
+
+.self-media-left{
+    width: 30%;
+    height: 172px;
+}
+
+.self-media-heading{
+    margin-top: 1px;
+}
+
+.self-media-heading a {
+    font-size: 19px;
+}
+
+.single_bottom_rightbar > h2 {
+    font-family: 'Merriweather', serif;
+    padding: 0 0 4px;
+}
+
+/*---------- MEDIA--PHONE ----------*/
+@media(max-width:991px ){
+    .header_top_right{
+        float:left;
+    } 
+    .media-btn{
+        margin-right: 83%;
+    }
+    .media-heading a {
+        font-size: 15px;
+    }
+
+    .media-tablet a {
+        font-size: 22px;
+    }
+
+    .fashion_catgnav > li > p {
+        display: none;
+    }
+}

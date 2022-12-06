@@ -1,0 +1,41 @@
+<% include ./../../helpers/format-date %>
+<% include ./../../helpers/highlight %>
+<% include ./../../helpers/format-summary %>
+
+<%
+    const folder_uploads = 'uploads/articles/';
+%>
+    
+<div class="col-lg-8 col-md-8">
+    <div class="content_bottom_left">
+        <div class="single_category wow fadeInDown">
+            <div class="archive_style_1">
+                <% if(itemsSearch.length > 0) { %>
+                <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <span class="title_text"><%=  %></span> </h2>
+                <% itemsSearch.forEach((item)=> { %>
+                
+                <div class="single_archive wow fadeInDown">
+                    <div class="archive_imgcontainer"><img src="<%= folder_uploads + item.avatar %>" alt="<%= item.name %>"> </div>
+                    <div class="archive_caption">
+                        <h2><a href="/article/<%= item.slug %>"><%- highlightHelper(item.name, params.keyword) %></a></h2>
+                        <p><%- formatSummary(item.content) %> ...</p>
+                    </div>
+                    <a class="read_more" href="/category/<%= item.group.slug %>"><span><%= item.group.name %></span></a> 
+                </div>
+                
+                <% }) %>
+                <% } else { %>
+                    <tr ><td colspan="9"><h3>Không có dữ liệu</h3></td></tr>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+    
+

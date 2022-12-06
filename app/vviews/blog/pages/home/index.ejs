@@ -1,0 +1,60 @@
+<% include ./../../helpers/format-summary %>
+<%
+    const folder_uploads = 'uploads/articles/';
+    
+%>
+
+<div class="col-lg-8 col-md-8">
+  <div class="content_bottom_left">
+    <%= //JSON.stringify(itemArr)  %> 
+
+    <% for (let i = 0; i < itemsCategory.length; i++) { %>   
+
+      <div class="single_category wow fadeInDown">
+        <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <a class="title_text" href="category/<%= itemsCategory[i].slug %>"><%= itemsCategory[i].name %></a> </h2>  
+          <div id="box-cate<%= i %>" data-url="category/<%= itemsCategory[i].id %>/json">
+          
+          </div>
+      </div>
+
+      
+    <% } %> 
+  </div>
+</div>
+
+
+
+<!-- link = systemConfig  -->
+
+  <!-- <div class="col-lg-8 col-md-8">
+    <div class="content_bottom_left">
+      <%= //JSON.stringify(itemArr)  %> 
+
+      <% //itemsCategory.forEach((category)=>{ %>
+        <div class="single_category wow fadeInDown">
+          <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <a class="title_text" href="/category/<%= //category.id %>"><%= //category.name %></a> </h2>
+          
+          <% //if( == category.id){ %>
+            
+          <%// } %>
+          <div id="" class="business_category_left wow fadeInDown box-large" data-url="<%-//link%>/category/<%= //category.id %>/json">
+            
+          </div>
+
+          <div class="business_category_right wow fadeInDown boxSmall">
+            <ul class="small_catg">
+              <li>
+                <div class="media wow fadeInDown"> <a class="media-left" href="pages/single.html"><img src="images/112x112.jpg" alt=""></a>
+                  <div class="media-body">
+                    <h4 class="media-heading"><a href="pages/single.html">Duis condimentum nunc pretium lobortis </a></h4>
+                    <div class="comments_box"> <span class="meta_date">14/12/2045</span> <span class="meta_comment"><a href="#">No Comments</a></span> </div>
+                  </div>
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      <%//}) %>
+    </div>
+  </div> -->

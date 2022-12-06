@@ -1,0 +1,44 @@
+<% include ./../../helpers/format-date %>
+<% include ./../../helpers/format-summary %>
+
+<%
+    const folder_uploads = 'uploads/articles/';
+%>
+
+<div class="col-lg-8 col-md-8">
+    <div class="content_bottom_left">
+        <div class="technology_catrarea">
+          <div class="single_category">
+            <div class="archive_style_1">
+              <% if(itemsInCategory.length > 0) { %>
+              <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <span class="title_text"><%= itemsInCategory[0].group.name %></span> </h2>
+              <% itemsInCategory.forEach((item)=> { %>
+              <div class="business_category_right self-category">
+                <ul class="small_catg wow fadeInDown">
+                  <li>
+                    <div class="media wow fadeInDown"> <a class="media-left self-media-left"  href="/article/<%= item.slug %>"><img src="<%= folder_uploads + item.avatar %>" alt="<%= item.name %>"> </a>
+                      <div class="media-body">
+                        <h4 class="media-heading self-media-heading"><a  href="/article/<%= item.slug %>"><%= item.name %></a></h4>
+                        <div class="comments_box"> <span class="meta_date"><%- formatDate(item.created.time) %></span></div>
+                        <p><%- formatSummary2(item.content) %> ...</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <% }) %>
+              <% } else { %>
+                <tr ><td colspan="9"><h3>Không có dữ liệu</h3></td></tr>
+            <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+</div>
+
+
+
+    
+

@@ -1,0 +1,59 @@
+<% 
+    imageHelper = (folder, imageName,imageDefault, alt = "Image", className = "img-responsive img-avatar") => {
+        if(imageName == null){ 
+            imageName = imageDefault;
+        }
+        return `<img style="width: 60px; vertical-align: middle; " class="${className}" src="${folder + imageName}" alt="${alt}" />`;
+    }
+%>
+
+<% 
+    imageHelper2 = (folder, imageName,imageDefault, alt = "Image", className = "img-responsive img-avatar") => {
+        if(imageName == null){ 
+            imageName = imageDefault;
+        }
+        
+        return `<img style="width: 100px; vertical-align: middle; " class="${className}" src="${folder + imageName}" alt="${alt}" />`;
+    }
+%>
+
+<% 
+    imageHelper3 = (folder, imageName, imageDefault, alt = "Image", className = "img-responsive img-avatar", size = 100) => {
+        let linkFolder =  'uploads/' + folder;
+        if(fs.existsSync(__path_uploads + folder + imageName) == false) {
+            imageName = imageDefault;
+        }
+        return `<img class="${className}" style="width: ${size}px;" src="${linkFolder + imageName}" alt="${alt}"  />`;
+    }
+%>
+
+<% 
+    imageHelper4 = (folder, imageName, imageDefault, alt = "Image", className = "img-responsive img-avatar", size = 100) => {
+        let linkFolder =  folder;
+        if(fs.existsSync(__path_uploads + folder + imageName) == false) {
+            imageName = imageDefault;
+        }
+        return `<img class="${className}" style="width: ${size}px;" src="${linkFolder + imageName}" alt="${alt}"  />`;
+    }
+%>
+
+<% 
+    showMultiImageHelper = (folder_upload, arrName) => {
+        let xhtml = '';
+        
+        if(arrName !== undefined) {
+            arrName.forEach( (item) => {
+                xhtml += `<li>
+                    <img src="${folder_upload + item}" alt="" style="width: 100px;">
+                </li>`;
+            });
+        }
+        return `<div class="card">
+                    <div class="card-body p-0">
+                        <ul class="users-list clearfix" id="box-multi-image">
+                            ${xhtml}
+                        </ul>
+                    </div>
+                </div>`
+    }
+%>

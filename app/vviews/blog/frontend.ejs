@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include ./elements/head %>
+</head>
+<body>
+<div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+<a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
+<div class="container">
+  
+	<% include ./elements/header %>
+
+	<% include ./elements/cate %>
+
+	
+  <section id="mainContent">
+    
+	<% if(top_post == true){ %>
+		<% include ./elements/top_post %>
+	<% } %>
+
+    <% //if(mid_post == true){ %>
+		<% //include ./elements/top_post %>
+	<% //} %>
+
+    <div class="content_bottom">
+      
+		<%- body %>
+		
+      <% if(silde_bar == true){ %>
+		<% include ./elements/sildebar %>
+	<% } %>
+    </div>
+  </section>
+</div>
+	<% include ./elements/footer %>
+	<% include ./elements/script %>
+</body>
+</html>

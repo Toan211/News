@@ -1,0 +1,10 @@
+<% 
+    radioBoxHelper = (radio_object, name, check) => {
+        let xhtml = '';
+        let checked = (check === 'yes') ? 'checked="checked"' : '';
+        radio_object.forEach( (item) =>{
+            xhtml += `<label><input type="radio" name="${name}" value="${item.value}" ${checked} style="margin: 10px;">${item.name}</label>`;
+        })
+        return xhtml;
+    }
+%>

@@ -1,0 +1,21 @@
+<% include ./../helpers/format-date %>
+<% include ./../helpers/format-summary %>
+<%
+    const folder_uploads = 'uploads/articles/';
+%>
+
+  <div class="single_bottom_rightbar">
+    <h2>Tin ngẫu nhiên</h2>
+    <ul class="small_catg popular_catg wow fadeInDown">
+      <% for(let i = 0; i < itemsRandom.length; i++){ %>
+      <li>
+        <div class="media wow fadeInDown"> <a  href="/article/<%= itemsRandom[i].slug %>" class="media-left"><img src="<%= folder_uploads + itemsRandom[i].avatar %>" alt="<%= itemsRandom[i].name %>"> </a>
+          <div class="media-body">
+            <h4 class="media-heading media-tablet"><a  href="/article/<%= itemsRandom[i].slug %>" ><%= itemsRandom[i].name %> </a></h4>
+            <p></p>
+          </div>
+        </div>
+      </li>
+      <% } %>
+    </ul>
+  </div>

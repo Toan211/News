@@ -1,0 +1,35 @@
+<%  
+    let arrBox = [
+        {name: 'Chức vụ', icon: 'ion-ios-people', link: `${systemConfig.prefixAdmin}/groups`, total: totalGroups},
+        {name: 'Người dùng', icon: 'ion-ios-person', link: `${systemConfig.prefixAdmin}/users`, total: totalUsers},
+        {name: 'Thể loại', icon: 'ion-clipboard', link: `${systemConfig.prefixAdmin}/categories`, total: totalCategories},
+        {name: 'Tin tức', icon: 'ion-ios-book', link: `${systemConfig.prefixAdmin}/articles`, total: totalArticles},
+        {name: 'Quảng cáo', icon: 'ion-clipboard', link: `${systemConfig.prefixAdmin}/advertisements`, total: totalAd},
+        
+        {name: 'Liên hệ', icon: 'ion-ios-people', link: `${systemConfig.prefixAdmin}/contact`, total: totalContacts},
+    ];
+
+    let xhtmlBox = '';
+    arrBox.forEach((box) => {
+        xhtmlBox += `<div class="col-lg-3 col-6">
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3>${box.total}</h3>
+                                <p>${box.name}</p>
+                            </div>
+                            <div class="icon text-white">
+                                <i class="ion ${box.icon}"></i>
+                            </div>
+                            <a href="${box.link}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>`;
+    });   
+%>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row justify-content-left">
+            <%- xhtmlBox %>
+        </div>
+    </div>
+</section>

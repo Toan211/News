@@ -1,0 +1,27 @@
+<% 
+    selectboxHelper = (name, items, optionSelected = '') => {
+        let xhtml = '';
+        items.forEach((item) =>{
+            let selected = (item.id == optionSelected) ? `selected="selected"` : '';
+            let id       = (item.id == undefined) ? 'allvalue' : item.id;
+            xhtml += `<option value="${id}" ${selected} >${item.name}</option>`;
+        });
+        return `<select name="${name}" class="custom-select custom-select-sm" >
+                    ${xhtml}</select>`;
+    }
+%>
+				
+<% 
+    selectBoxHelper = (name, items, optionSelected = '', idName = '') => {
+        let xhtml = '';
+        items.forEach((item) =>{
+            let selected = (item.id == optionSelected) ? `selected="selected"` : '';
+            let id       = (item.id == undefined) ? 'allValue' : item.id;
+            xhtml += `<option value="${id}" ${selected} >${item.name}</option>`;
+        });
+        
+        return `<select id="${idName}" name="${name}" class="form-control select2bs4 select2-hidden-accessible" style="width: 120px;"" >
+            ${xhtml}</select>`;
+    }
+%>
+

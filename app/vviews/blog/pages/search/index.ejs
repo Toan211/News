@@ -1,0 +1,47 @@
+<% include ./../../helpers/format-date %>
+<% include ./../../helpers/highlight %>
+<% include ./../../helpers/format-summary %>
+
+<%
+    const folder_uploads = 'uploads/articles/';
+%>
+    
+<div class="col-lg-8 col-md-8">
+    <div class="content_bottom_left">
+        <div class="technology_catrarea">
+          <div class="single_category">
+            <div class="archive_style_1">
+              <% if(itemsSearch.length > 0) { %>
+              <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <span class="title_text">Tìm kiếm : <%= params.keyword %></span> </h2>
+              <% itemsSearch.forEach((item)=> { %>
+              <div class="business_category_right self-category">
+                <ul class="small_catg wow fadeInDown">
+                  <li>
+                    <div class="media wow fadeInDown"> <a class="media-left self-media-left"  href="/article/<%= item.slug %>"><img src="<%= folder_uploads + item.avatar %>" alt="<%= item.name %>"> </a>
+                      <div class="media-body">
+                        <h4 class="media-heading self-media-heading"><a  href="/article/<%= item.slug %>"><%- highlightHelper(item.name, params.keyword) %></a></h4>
+                        <div class="comments_box"> <span class="meta_date"><%- formatDate(item.created.time) %></span>
+                            <span class="meta_comment"><a href="/category/<%= item.group.slug %>"><%= item.group.name %></a></span>
+                        </div>
+                        <p><%- formatSummary2(item.content) %> ...</p>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <% }) %>
+              <% } else { %>
+                <h2>  <span class="solid_line"></span> <span class="title_text">Không có dữ liệu</span> </h2>
+            <% } %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+</div>
+
+
+
+    
+

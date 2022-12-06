@@ -1,0 +1,119 @@
+<% include ./../../helpers/get-image-src %>
+<% include ./../../helpers/format-date %>
+<% include ./../../helpers/format-summary %>
+		<%= //JSON.stringify(GoldItems[0].$.type) %> 
+		<%- //console.log(items.content); %> 
+		
+		<div class="col-lg-8 col-md-8">
+            <div class="content_bottom_left">
+                <div class="technology_catrarea">
+                  <div class="single_category">
+                    <div class="archive_style_1">
+                      <h2> <span class="bold_line"><span></span></span> <span class="solid_line"></span> <span class="title_text" href="#">General News</span> </h2>
+                      <% FeedItems.forEach((item)=> { %>
+                      <div class="business_category_right">
+                        <ul class="small_catg wow fadeInDown">
+                          <li>
+                            <div class="media wow fadeInDown"> <a class="media-left" target= "_blank" href="<%= item.link %>"><img src="<%= getImageSrc(item.content) %>" alt="<%= item.title %>"></a>
+                              <div class="media-body">
+                                <h4 class="media-heading"><a target= "_blank" href="<%= item.link %>"><%= item.title %></a></h4>
+                                <div class="comments_box"> <span class="meta_date"><%- formatDate(item.pubDate) %></span></div>
+                                
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <% }) %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        <!-- <div class="pagination_area">
+          <nav>
+            <ul class="pagination">
+              <li><a href="#"><span aria-hidden="true">&laquo;</span><span class="sr-only">Previous</span></a></li>
+              <li><a href="#">1</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#"><span aria-hidden="true">&raquo;</span><span class="sr-only">Next</span></a></li>
+            </ul>
+          </nav>
+        </div> -->
+      </div>
+
+
+
+
+
+<%= //JSON.stringify(itemsRandom) %> 
+<div class="col-lg-4 col-md-4">
+    <div class="content_bottom_right">
+        <div class="single_bottom_rightbar">
+        <h2>Giá vàng</h2></br>
+        <table style="table-layout: fixed;" class="table table-bordered">
+            <thead>
+                <tr>
+                    
+                    <th style="width:60%;" class="text-center align-middle">Loại vàng</th>
+                    <th class="text-center">Mua</th>
+                    <th class="text-center">Bán</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <% GoldItems.forEach((GoldItem)=> { %>
+                <tr>
+                    <td style="word-wrap:break-word "><%= GoldItem.$.type %></td>
+                    <td class="text-center align-middle"><%= GoldItem.$.buy %></td>
+                    <td class="text-center align-middle"><%= GoldItem.$.sell %></td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+      </div>
+       
+    </br>
+    <div class="single_bottom_rightbar">
+        <h2>Giá Coin</h2></br>
+        <% if(CoinItems.length > 0 || CoinItems != undefined) { %>
+            <table style="table-layout: fixed;" class="table table-bordered">
+                <thead>
+                    <tr>
+                        
+                        <th style="width:35%;" class="text-center align-middle">Name</th>
+                        <th style="width:35%;" class="text-center align-middle">Price (USD)</th>
+                        <th class="text-center align-middle">%Change (24h)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <% CoinItems.forEach((CoinItem)=> { %>
+                    <tr>
+                        <td style="word-wrap:break-word "><%= CoinItem.name %></td>
+                        <td class="text-center align-middle"><%= CoinItem.quote.USD.price.toFixed(2) %>$</td>
+                        <td class="text-center align-middle"><%= CoinItem.quote.USD.percent_change_24h.toFixed(2) %>%</td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <tr ><td colspan="9"><h3>Không có dữ liệu</h3></td></tr>
+        <% } %>
+      </div>
+    
+    <!-- banner -->
+      
+    <div class="single_bottom_rightbar wow fadeInDown header_bottom_right">
+      <h2></h2>
+      <a href="#">
+        <img style="
+        float: right;
+        width: 60%;
+        margin-right: 18%;
+        margin-top: 20px;" src="magexpress/images/re7.png" alt="">
+      </a>
+    </div>
+      </div>
+</div>
+</div>
