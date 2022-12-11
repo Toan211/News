@@ -1,5 +1,6 @@
+Since Heroku free plan has been cut off, now we have no where to deploy server, hope you understand
 
-Download nodejs
+Download nodejs: https://nodejs.org/en/download/
 
 go into source code's folder, open terminal, then write: npm install
 
