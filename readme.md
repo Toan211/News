@@ -1,4 +1,4 @@
-Since Heroku free plan has been cut off, we now have a hard time to find another hosting web server.
+Since Heroku's free plan has been cut off, we now have a hard time to find another hosting web server.
 
 ## How to run this project:
 
