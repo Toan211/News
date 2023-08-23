@@ -1,17 +1,19 @@
 Since Heroku free plan has been cut off, we now have a hard time to find another hosting web server.
 
-Video Demo (for my school project): https://youtu.be/VLc9gnW_JU0 (skip to 6:24 to see our website)
-
 Download nodejs: https://nodejs.org/en/download/
 
-go into source code's folder, open terminal, then write: npm install
+`*npm install*`
 
-wait until they download all package, then write again: npm start
+Open terminal in this project directory, then run npm install to install all npm package dependencies
+
+`*npm start*`
+
+Run npm start to start this app in developmment mode
 
 To your web browser, open: 
-https://localhost:8765 
+https://localhost:8765 (or other 4 number in ./bin/www)
 
-Login page:
+`*Login to admin page:*`
 
 Username: admin , 
 Password: 123456
