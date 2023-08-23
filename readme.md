@@ -8,11 +8,11 @@ Download nodejs: https://nodejs.org/en/download/
 
 `npm install`
 
-Open terminal in this project directory, then run npm install to install all npm package dependencies
+Open terminal in this project directory, then run *npm install* to install all npm package dependencies
 
 `npm start`
 
-Run npm start to start this app in developmment mode
+Run *npm start* to start this app in developmment mode
 
 To your web browser, open: 
 https://localhost:8765 (or other 4 number in ./bin/www)
