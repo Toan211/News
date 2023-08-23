@@ -1,5 +1,9 @@
 Since Heroku free plan has been cut off, we now have a hard time to find another hosting web server.
 
+## How to run this project:
+
+`*nodejs*`
+
 Download nodejs: https://nodejs.org/en/download/
 
 `*npm install*`
