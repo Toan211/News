@@ -22,6 +22,4 @@ https://localhost:8765 (or other 4 number in ./bin/www)
 Username: admin , 
 Password: 123456
 
-Please refrain from adding or editing new page from admin page (to be specific, the image is the problem when creating and editing page)
-
 
